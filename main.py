@@ -47,6 +47,7 @@ def calcPossibleTurns(array: list, atTurn: bool, board: list) -> list:
     if atTurn == "White":
         for e in array[0]:
             e_type = list(e.id)[0]
+            # Tower
             if e_type == "T":
                 x = e.x
                 y = e.y
@@ -70,6 +71,173 @@ def calcPossibleTurns(array: list, atTurn: bool, board: list) -> list:
                     else:
                         possibleTurns.append([i, x, y])
                         break
+                x = e.x
+                y = e.y
+                while True:
+                    y += 1
+                    if y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    y -= 1
+                    if y == -1:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+            # Bishop
+            if e_type == "B":
+                x = e.x
+                y = e.y
+                while True:
+                    x += 1
+                    y += 1
+                    if x == -1 or y == -1 or x == 8 or y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    x -= 1
+                    y += 1
+                    if x == -1 or y == -1 or x == 8 or y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    x += 1
+                    y -= 1
+                    if x == -1 or y == -1 or x == 8 or y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    x -= 1
+                    y -= 1
+                    if x == -1 or y == -1 or x == 8 or y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+            # Queen
+            if e_type == "Q":
+                x = e.x
+                y = e.y
+                while True:
+                    x += 1
+                    y += 1
+                    if x == -1 or y == -1 or x == 8 or y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    x -= 1
+                    y += 1
+                    if x == -1 or y == -1 or x == 8 or y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    x += 1
+                    y -= 1
+                    if x == -1 or y == -1 or x == 8 or y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    x -= 1
+                    y -= 1
+                    if x == -1 or y == -1 or x == 8 or y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    x += 1
+                    if x == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    x -= 1
+                    if x == -1:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    y += 1
+                    if y == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    y -= 1
+                    if y == -1:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+
         i += 1
     else:
         for e in array[1]:
