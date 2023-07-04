@@ -11,8 +11,6 @@ board = [
 
 class Tower:
     def __init__(self, x: int, y: int, number: int, iswhite: bool):
-        self.jump = False
-        self.attack = ["front", "left", "back", "right"]
         self.x = x
         self.y = y
         self.number = number
@@ -29,9 +27,6 @@ class Tower:
 
 class Pawn:
     def __init__(self, x: int, y: int, number: int, iswhite: bool):
-        self.direction = ["front"]
-        self.jump = False
-        self.attack = ["left-front", "right-front"]
         self.x = x
         self.y = y
         self.number = number
@@ -48,9 +43,6 @@ class Pawn:
 
 class Bishop:
     def __init__(self, x: int, y: int, number: int, iswhite: bool):
-        self.direction = ["left-front", "right-front", "left-back", "right-back"]
-        self.jump = False
-        self.attack = ["left-front", "right-front", "left-back", "right-back"]
         self.x = x
         self.y = y
         self.number = number
@@ -67,27 +59,6 @@ class Bishop:
 
 class Queen:
     def __init__(self, x: int, y: int, number: int, iswhite: bool):
-        self.direction = [
-            "left-front",
-            "right-front",
-            "left-back",
-            "right-back",
-            "front",
-            "left",
-            "back",
-            "right",
-        ]
-        self.jump = False
-        self.attack = [
-            "left-front",
-            "right-front",
-            "left-back",
-            "right-back",
-            "front",
-            "left",
-            "back",
-            "right",
-        ]
         self.x = x
         self.y = y
         self.number = number
@@ -104,27 +75,6 @@ class Queen:
 
 class King:
     def __init__(self, x: int, y: int, number: int, iswhite: bool):
-        self.direction = [
-            "left-front",
-            "right-front",
-            "left-back",
-            "right-back",
-            "front",
-            "left",
-            "back",
-            "right",
-        ]
-        self.jump = False
-        self.attack = [
-            "left-front",
-            "right-front",
-            "left-back",
-            "right-back",
-            "front",
-            "left",
-            "back",
-            "right",
-        ]
         self.x = x
         self.y = y
         self.number = number
@@ -141,9 +91,6 @@ class King:
 
 class Knight:
     def __init__(self, x: int, y: int, number: int, iswhite: bool):
-        self.direction = []
-        self.jump = False
-        self.attack = []
         self.x = x
         self.y = y
         self.number = number

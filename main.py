@@ -21,8 +21,8 @@ player = [
         Knight(6, 0, 2, True),
     ],
     [
-        Tower(0, 7, 3, False),
-        Tower(7, 7, 4, False),
+        Tower(0, 7, 1, False),
+        Tower(7, 7, 2, False),
         Pawn(0, 6, 1, False),
         Pawn(1, 6, 2, False),
         Pawn(2, 6, 3, False),
@@ -41,14 +41,40 @@ player = [
 ]
 
 
-def calcPossibleTurns(array, atTurn):
+def calcPossibleTurns(array: list, atTurn: bool, board: list) -> list:
+    possibleTurns = []
+    i = 0
     if atTurn == "White":
         for e in array[0]:
-            if e.jump:
-                pass
+            e_type = list(e.id)[0]
+            if e_type == "T":
+                x = e.x
+                y = e.y
+                while True:
+                    x += 1
+                    if x == 8:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+                x = e.x
+                y = e.y
+                while True:
+                    x -= 1
+                    if x == -1:
+                        break
+                    if board[y][x] == None:
+                        possibleTurns.append([i, x, y])
+                    else:
+                        possibleTurns.append([i, x, y])
+                        break
+        i += 1
     else:
         for e in array[1]:
             pass
+    return possibleTurns
 
 for y in board:
     print(y)
