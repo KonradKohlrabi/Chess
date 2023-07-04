@@ -237,8 +237,82 @@ def calcPossibleTurns(array: list, atTurn: bool, board: list) -> list:
                     else:
                         possibleTurns.append([i, x, y])
                         break
-
-        i += 1
+            if e_type == "N":
+                x = e.x
+                y = e.y
+                y += 2
+                x -= 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    possibleTurns.append([i, x, y])
+                
+                x = e.x
+                y = e.y
+                y += 2
+                x += 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    possibleTurns.append([i, x, y])
+                
+                x = e.x
+                y = e.y
+                y += 1
+                x += 2
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    possibleTurns.append([i, x, y])
+                    
+                x = e.x
+                y = e.y
+                y = -1
+                x += 2
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    possibleTurns.append([i, x, y])
+                    
+                x = e.x
+                y = e.y
+                y -= 2
+                x += 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    possibleTurns.append([i, x, y])
+                x = e.x
+                y = e.y
+                y -= 2
+                x -= 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    possibleTurns.append([i, x, y])
+                    
+                x = e.x
+                y = e.y
+                y -= 1
+                x -= 2
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    possibleTurns.append([i, x, y])
+                    
+                x = e.x
+                y = e.y
+                y += 1
+                x -= 2
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    possibleTurns.append([i, x, y])
+            if e_type == "P":
+                x = e.x
+                y = e.y
+            
+            i += 1
     else:
         for e in array[1]:
             pass
