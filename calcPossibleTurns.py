@@ -1,7 +1,11 @@
-def isCheck(turns: list, color: str, array: list, board: list):
+def isCheck(turns: list, color: str, array: list, board: list, onTurn: str):
     for turn in turns:
         newBoard = move(turn, array, board)
 
+def canTakeKing(board: list, ):
+    for y in board:
+        for x in board:
+            pass
 
 def move(turn: list, array: list, board: list) -> list:
     id = array[turn][0].id
@@ -21,7 +25,7 @@ def getColor(y: int, x: int, board: list) -> bool:
     else:
         return False # Black
 
-def calcPossibleTurns(array: list, atTurn: bool, board: list) -> list:
+def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
     possibleTurns = []
     i = 0
     if atTurn == "White":
