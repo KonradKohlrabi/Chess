@@ -1,29 +1,4 @@
-def isCheck(turns: list, color: str, array: list, board: list, onTurn: str):
-    for turn in turns:
-        newBoard = move(turn, array, board)
-
-def canTakeKing(board: list, ):
-    for y in board:
-        for x in board:
-            pass
-
-def move(turn: list, array: list, board: list) -> list:
-    id = array[turn][0].id
-    for y in range(len(board)):
-        for x in range(len(board[y])):
-            if board[y][x] == id:
-                newx = x + turn[1]
-                newy = y + turn[2]
-                board[y][x] = None
-                board[newy][newx] = id
-                
-        
-def getColor(y: int, x: int, board: list) -> bool:
-    color = list(board[y][x])[2]
-    if color == "T":
-        return True # White
-    else:
-        return False # Black
+from canTakeKing import canTakeKing, getColor, isCheck, move
 
 def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
     possibleTurns = []
@@ -377,7 +352,7 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     else:
                         if board[y][x] == None:
                             possibleTurns.append([i, x, y])
-                # Fressen
+                # Taking
                 x = e.x
                 y = e.y
                 y += 1
@@ -398,7 +373,101 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     if not board[y][x] == None:
                         if not getColor(y, x, board):
                             possibleTurns.append([i, x, y])
-                    
+
+            # King
+            
+
+            if e_type == "K":
+                x = e.x
+                y = e.y
+                y += 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+                
+                x = e.x
+                y = e.y
+                x += 1
+                y += 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+
+                x = e.x
+                y = e.y
+                x += 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+                
+                x = e.x
+                y = e.y
+                y -= 1
+                x += 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+
+                x = e.x
+                y = e.y
+                y -= 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+                x = e.x
+                y = e.y
+                y -= 1
+                x -= 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+
+                x = e.x
+                y = e.y
+                x -= 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+                x = e.x
+                y = e.y
+                y += 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+                x = e.x
+                y = e.y
+                y += 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+                x = e.x
+                y = e.y
+                y += 1
+                if x < 0 and x > 7 and y < 0 and y > 7:
+                    pass
+                else:
+                    if list(board[y][x])[0] == "K":
+                        return True
+
+
             i += 1
     else:
         for e in array[1]:
