@@ -32,6 +32,7 @@ class Pawn:
         self.number = number
         self.iswhite = iswhite
         self.id = "P" + str(self.number) + str(self.iswhite)
+        self.onBaseline = True
         board[y][x] = self.id
 
     def go(self, x, y):

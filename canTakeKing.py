@@ -397,6 +397,9 @@ def move(turn: list, array: list, board: list) -> list:
                 
         
 def getColor(y: int, x: int, board: list) -> bool:
+    e = board[y][x]
+    if e == None:
+        return False
     color = list(board[y][x])[2]
     if color == "T":
         return True # White
