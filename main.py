@@ -1,5 +1,5 @@
 from classes import Bishop, Tower, Pawn, King, Knight, Queen, board
-#from calcPossibleTurns import calcPossibleTurns, getColor, isCheck
+from calcPossibleTurns import calcPossibleTurns, getColor, isCheck
 
 atTurn = "White"
 players = [
@@ -41,5 +41,5 @@ players = [
     ],
 ]
 
-print(board)
-    
+for x in board:
+    print(x)
