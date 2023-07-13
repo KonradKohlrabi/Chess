@@ -1,5 +1,14 @@
-from canTakeKing import canTakeKing, getColor, isCheck, move
+from canTakeKing import canTakeKing, isCheck, move
 
+def getColor(y: int, x: int, board: list) -> bool:
+    e = board[y][x]
+    if e == None:
+        return False
+    color = list(board[y][x])[2]
+    if color == "T":
+        return True # White
+    else:
+        return False # Black
 
 def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
     possibleTurns = []
@@ -139,7 +148,7 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                                 possibleTurns.append([i, x, y])
             i += 1
     else:
-        for e in array[0]:
+        for e in array[1]:
             e_type = list(e.id)[0]
 
             # Tower, Queen
@@ -272,6 +281,7 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                             if getColor(y, x, board):
                                 possibleTurns.append([i, x, y])
             i += 1
+    possibleTurns = isCheck(possibleTurns, array, board, atTurn)
     return possibleTurns
 
 
@@ -321,3 +331,5 @@ if __name__ == "__main__":
         "White",
         board
     ))
+
+
