@@ -1,3 +1,5 @@
+import json
+
 def canTakeKing(board: list, atTurn: str) -> bool:
     if atTurn == "White": # White has pullt. Now at turn is Black
         indexY = 0
@@ -42,11 +44,14 @@ def canTakeKing(board: list, atTurn: str) -> bool:
                                     break
                             x = indexX
                             y = indexY
+                            lol = 0
                             while True:
+                                lol += 1
                                 y -= 1
                                 if not (x < 0 or x > 7 or y < 0 or y > 7):
                                     if not board[y][x] == None:
                                         if list(board[y][x])[0] == "K" and list(board[y][x])[2] == "T": # Check if its the white king
+                                            print(e + "\n" + str(y) + "/" + str(x) + "\n" + str(lol) + "\n" + board[y][x] + "")
                                             return True
                                 else:
                                     break
@@ -106,8 +111,10 @@ def canTakeKing(board: list, atTurn: str) -> bool:
                                             return True
                 indexX += 1
             indexY += 1
-    if atTurn == "Black": # Black has pullt. Now at turn is White
+    else: # Black has pullt. Now at turn is White
+        indexX = 0
         for yFor in board:
+            indexY = 0
             for e in yFor:
                 if not e == None:
                     if list(e)[2] == "F": # Check if its a white figure
@@ -186,8 +193,8 @@ def canTakeKing(board: list, atTurn: str) -> bool:
 
                         # Pawn
                         if e_type == "P":
-                            x = e.x
-                            y = e.y
+                            x = indexX
+                            y = indexY
                             moves = [(1, 1), (-1, 1)]
                             for move in moves:
                                 dx, dy = move
@@ -208,18 +215,27 @@ def canTakeKing(board: list, atTurn: str) -> bool:
                                     if not board[y][x] == None:
                                         if list(board[y][x])[0] == "K" and list(board[y][x])[2] == "F": # Check if its the black king
                                             return True
+                indexX += 1
+            indexY += 1
                                     
 def isCheck(turns: list, array: list, board: list, onTurn: str) -> list:
     i = 0
     for turn in turns:
+        with open("Zwischenspeicher.json", "w") as o:
+            json.dump(board, o)
         newBoard = move(turn, array, board, onTurn)
         if canTakeKing(newBoard, onTurn):
             turns.pop(i)
+        with open("Zwischenspeicher.json", "r") as o:
+            board = json.load(o)
         i += 1
+    for x in board:
+        print(x)
+    print("")
     return turns
 
 def move(turn: list, array: list, board: list, onTurn: str) -> list:
-    element = (turn[0]) - 1
+    element = (turn[0])
     if onTurn == "White":
         id = array[0][element].id
     else:

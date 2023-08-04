@@ -1,5 +1,16 @@
 from classes import Bishop, Tower, Pawn, King, Knight, Queen, board
-from calcPossibleTurns import calcPossibleTurns, getColor, isCheck
+from calcPossibleTurns import calcPossibleTurns
+
+def move(turn: list, players: list, atTurn: str) -> tuple:
+    if atTurn == "White":
+        players[0][turn[0]].x = turn[1]
+        players[0][turn[0]].y = turn[2]
+        atTurn = "Black"
+    else:
+        players[1][turn[0]].x = turn[1]
+        players[1][turn[0]].y = turn[2]
+        atTurn = "White"
+    return (players, atTurn)
 
 atTurn = "White"
 players = [
@@ -41,5 +52,9 @@ players = [
     ],
 ]
 
-for x in board:
-    print(x)
+if __name__ == "__main__":
+    # players, atTurn = move([5, 4, 4], players, atTurn)
+    print(len(calcPossibleTurns(players, atTurn, board)))
+    for x in board:
+        print(x)
+
