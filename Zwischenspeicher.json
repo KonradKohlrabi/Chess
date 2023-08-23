@@ -1,10 +1,1 @@
-[
-    ["T1True", "N1True", "B1True", "Q1True", "K1True", "B2True", "N2True", "T2True"], 
-    ["P1True", "P2True", "P3True", "P4True", "P5True", "P6True", "P7True", "P8True"], 
-    [null, null, null, null, null, null, null, null], 
-    [null, null, null, null, null, null, null, null], 
-    [null, null, null, null, null, null, null, null], 
-    [null, null, null, null, null, null, null, null], 
-    ["P1False", "P2False", "P3False", "P4False", "P5False", "P6False", "P7False", "P8False"], 
-    ["T1False", "N1False", "B1False", "Q1False", "K1False", "B2False", "N2False", "T2False"]
-]
+[["T1True", "N1True", "B1True", "Q1True", "K1True", "B2True", "N2True", "T2True"], ["P1True", "P2True", "P3True", "P4True", "P5True", "P6True", "P7True", "P8True"], [null, null, null, null, null, null, null, null], [null, null, null, null, null, null, null, null], [null, null, null, null, null, null, null, null], [null, null, null, null, null, null, null, null], ["P1False", "P2False", "P3False", "P4False", "P5False", "P6False", "P7False", "P8False"], ["T1False", "N1False", "B1False", "Q1False", "K1False", "B2False", "N2False", "T2False"]]

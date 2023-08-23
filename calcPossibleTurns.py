@@ -26,9 +26,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     x += 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                         elif not getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                             break
                         else:
                             break
@@ -40,9 +40,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     x -= 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                         elif not getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                             break
                         else:
                             break
@@ -54,9 +54,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     y += 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                         elif not getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                             break
                         else:
                             break
@@ -68,9 +68,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     y -= 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                         elif not getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                             break
                         else:
                             break
@@ -89,9 +89,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                         y += dy
                         if not (x < 0 or x > 7 or y < 0 or y > 7):
                             if board[y][x] == None:
-                                possibleTurns.append([i, x, y])
+                                possibleTurns.append([i, x, y, e_type])
                             elif not getColor(y, x, board):
-                                possibleTurns.append([i, x, y])
+                                possibleTurns.append([i, x, y, e_type])
                                 break
                             else:
                                 break
@@ -107,7 +107,7 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     y = e.y + dy
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if not getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
 
             # Pawn
             if e_type == "P":
@@ -116,13 +116,13 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                 y += 1
                 if not (x < 0 or x > 7 or y < 0 or y > 7):
                     if board[y][x] == None:
-                        possibleTurns.append([i, x, y])
+                        possibleTurns.append([i, x, y, e_type])
 
                 if e.onBaseline:
                     y += 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
 
                 x = e.x
                 y = e.y
@@ -134,7 +134,7 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if not board[y][x] == None:
                             if not getColor(y, x, board):
-                                possibleTurns.append([i, x, y])
+                                possibleTurns.append([i, x, y, e_type])
 
             # King
             if e_type == "K":
@@ -146,7 +146,7 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if not board[y][x] == None:
                             if not getColor(y, x, board):
-                                possibleTurns.append([i, x, y])
+                                possibleTurns.append([i, x, y, e_type])
             i += 1
     else:
         for e in array[1]:
@@ -160,9 +160,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     x += 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                         elif getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                             break
                         else:
                             break
@@ -174,9 +174,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     x -= 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                         elif getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                             break
                         else:
                             break
@@ -188,9 +188,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     y += 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                         elif not getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                             break
                         else:
                             break
@@ -202,9 +202,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     y -= 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                         elif not getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
                             break
                         else:
                             break
@@ -223,9 +223,9 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                         y += dy
                         if not (x < 0 or x > 7 or y < 0 or y > 7):
                             if board[y][x] == None:
-                                possibleTurns.append([i, x, y])
+                                possibleTurns.append([i, x, y, e_type])
                             elif not getColor(y, x, board):
-                                possibleTurns.append([i, x, y])
+                                possibleTurns.append([i, x, y, e_type])
                                 break
                             else:
                                 break
@@ -241,7 +241,7 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     y = e.y + dy
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if getColor(y, x, board):
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
 
             # Pawn
             if e_type == "P":
@@ -250,13 +250,13 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                 y -= 1
                 if not (x < 0 or x > 7 or y < 0 or y > 7):
                     if board[y][x] == None:
-                        possibleTurns.append([i, x, y])
+                        possibleTurns.append([i, x, y, e_type])
 
                 if e.onBaseline:
                     y -= 1
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if board[y][x] == None:
-                            possibleTurns.append([i, x, y])
+                            possibleTurns.append([i, x, y, e_type])
 
                 x = e.x
                 y = e.y
@@ -268,7 +268,7 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if not board[y][x] == None:
                             if getColor(y, x, board):
-                                possibleTurns.append([i, x, y])
+                                possibleTurns.append([i, x, y, e_type])
 
             # King
             if e_type == "K":
@@ -280,7 +280,7 @@ def calcPossibleTurns(array: list, atTurn: str, board: list) -> list:
                     if not (x < 0 or x > 7 or y < 0 or y > 7):
                         if not board[y][x] == None:
                             if getColor(y, x, board):
-                                possibleTurns.append([i, x, y])
+                                possibleTurns.append([i, x, y, e_type])
             i += 1
     possibleTurns = isCheck(possibleTurns, array, board, atTurn)
     with open("Zwischenspeicher.json", "r") as o:

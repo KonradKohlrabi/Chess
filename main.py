@@ -54,7 +54,7 @@ players = [
 
 if __name__ == "__main__":
     # players, atTurn = move([5, 4, 4], players, atTurn)
-    print(len(calcPossibleTurns(players, atTurn, board)))
+    print(calcPossibleTurns(players, atTurn, board))
     for x in board:
         print(x)
 
